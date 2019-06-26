@@ -26,6 +26,7 @@ export default class TextEcg extends React.Component<any,props>{
         this.clearnHeight = 250// document.getElementById('canvas').getBoundingClientRect().height, // 获取画布的宽高，定义起始点的位置
         this.width = 750 // document.getElementById('canvas').getBoundingClientRect().width
         this.ctx = canvas.getContext('2d')
+        this.ctx.strokeStyle  = option[0].color
         this.darwData()
     }
 
@@ -60,7 +61,7 @@ export default class TextEcg extends React.Component<any,props>{
            setTimeout(()=>{
                 this.clearcanvans(this.index*this.x)
                 this.darw(item,data)
-           },(500/1900)*this.index)
+           },100)
             // window.requestAnimationFrame(()=>{
             //     this.clearcanvans(this.dataIndex)
             //     this.darw(item,data)
